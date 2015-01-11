@@ -5,17 +5,30 @@ public class SortedDynamicArrayInt {
 	private int counter;
 	private final int DEFAULT_SIZE = 5;
 	
+	/**
+	 * Konstruktor bez parametara
+	 */
+	
 	public SortedDynamicArrayInt()
 	{
 		this.array = new int[DEFAULT_SIZE];
 		this.counter = 0;
 	}
 	
+	/**
+	 * Konstruktor sa jednim parametrom
+	 * @param size
+	 */
+	
 	public SortedDynamicArrayInt(int size)
 	{
 		this.array = new int[size];
 		this.counter = 0;
 	}
+	
+	/**
+	 * Metoda koja sortira èlanove niza (insertion sort)
+	 */
 	
 	private void sortArray()
 	{
@@ -33,6 +46,11 @@ public class SortedDynamicArrayInt {
 		}
 	}
 	
+	/**
+	 * Metoda koja dodaje èlanove niza
+	 * @param value
+	 */
+	
 	public void add(int value)
 	{
 		if (counter == array.length)
@@ -43,6 +61,12 @@ public class SortedDynamicArrayInt {
 		this.counter++;
 		sortArray();
 	}
+	
+	/**
+	 * Metoda koja dodaje èlanove niza na mjesto odreðeno indeksom
+	 * @param value
+	 * @param index
+	 */
 	
 	public void addAt(int value, int index)
 	{
@@ -63,6 +87,11 @@ public class SortedDynamicArrayInt {
 		
 	}
 	
+	/**
+	 * Metoda koja uklanja jedan element niza odreðen indeksom
+	 * @param index
+	 */
+	
 	public void removeAt(int index)
 	{
 		if (index < 0 || index >= counter)
@@ -77,6 +106,12 @@ public class SortedDynamicArrayInt {
 		counter--;
 	}
 	
+	/**
+	 * Metoda koja vraæa jedan element niza odreðen indeksom
+	 * @param index
+	 * @return
+	 */
+	
 	public int getAt(int index)
 	{
 		if (index < 0 || index >= counter)
@@ -86,10 +121,20 @@ public class SortedDynamicArrayInt {
 		return array[index];
 	}
 	
+	/**
+	 * Metoda koja vraæa velièinu niza, tj. broj popunjenih mjesta u nizu
+	 * @return
+	 */
+	
 	public int getSize()
 	{
 		return counter;
 	}
+	
+	/**
+	 * Metoda koja vraæa niz sa taèno onoliko elemenata koliko smo unijeli
+	 * @return array
+	 */
 	
 	public int[] toArray()
 	{
@@ -102,6 +147,10 @@ public class SortedDynamicArrayInt {
  		return array;
 	}
 	
+	/**
+	 * Metoda koja vraæa string sa svim èlanovima niza
+	 */
+	
 	public String toString()
 	{
 		String str="";
@@ -111,6 +160,12 @@ public class SortedDynamicArrayInt {
 		}
 		return str;
 	}
+	
+	/**
+	 * Metoda koja provjerava da li postoji èlan niza koji ima odreðenu vrijednost
+	 * @param value
+	 * @return boolean
+	 */
 	
 	public boolean contains(int value)
 	{
@@ -123,6 +178,10 @@ public class SortedDynamicArrayInt {
 		}
 		return false;
 	}
+	
+	/**
+	 * Metoda koja poveæava dužinu niza dva puta, kada je niz popunjen 
+	 */
 	
 	public void resize()
 	{

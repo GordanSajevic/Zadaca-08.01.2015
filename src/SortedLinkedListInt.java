@@ -5,11 +5,20 @@ public class SortedLinkedListInt {
 		private int counter;
 		private Node head;
 		
+		/**
+		 * Konstruktor bez parametara
+		 */
+		
 		public SortedLinkedListInt()
 		{
 			this.head = null;
 			this.counter = 0;
 		}
+		
+		/**
+		 * Metoda koja dodaje jedan element listi, ali tako da lista uvijek bude sortirana
+		 * @param value
+		 */
 		
 		public void add(int value)
 		{
@@ -41,6 +50,12 @@ public class SortedLinkedListInt {
 			
 		}
 		
+		/**
+		 * Metoda koja dodaje element niza na mjesto odreðeno indeksom
+		 * @param value
+		 * @param index
+		 */
+		
 		public void addAt(int value, int index)
 		{
 			Node newNode = new Node(value);
@@ -66,6 +81,10 @@ public class SortedLinkedListInt {
 			counter++;
 		}
 		
+		/**
+		 * Metoda koja vraæa string sa svim elementima liste
+		 */
+		
 		public String toString()
 		{
 			String str = "";
@@ -77,6 +96,11 @@ public class SortedLinkedListInt {
 			}
 			return str;
 		}
+		
+		/**
+		 * Metoda koja uklanja element liste odreðen indeksom
+		 * @param index
+		 */
 		
 		public void removeAt(int index)
 		{
@@ -110,6 +134,11 @@ public class SortedLinkedListInt {
 			counter--;
 		}
 		
+		/**
+		 * Metoda koja vraæa niz sa èlanovima liste
+		 * @return array
+		 */
+		
 		public int[] toArray()
 		{
 			Node current = head;
@@ -123,6 +152,12 @@ public class SortedLinkedListInt {
 			}
 			return array;
 		}
+		
+		/**
+		 * Metoda koja provjerava da li postoji èlan liste koji sadrži odreðenu vrijednost
+		 * @param value
+		 * @return boolean
+		 */
 		
 		public boolean contains(int value)
 		{
@@ -138,6 +173,11 @@ public class SortedLinkedListInt {
 			return false;
 		}
 		
+		/**
+		 * Metoda koja vraæa dužinu liste
+		 * @return
+		 */
+		
 		public int getSize()
 		{
 			return counter;
@@ -149,12 +189,24 @@ public class SortedLinkedListInt {
 			private Node next;
 			private Node previous;
 			
+			/**
+			 * Konstruktor sa jednim parametrom
+			 * @param value
+			 */
+			
 			public Node(int value)
 			{
 				this.value = value;
 				this.next = null;
 				this.previous = null;
 			}
+			
+			/**
+			 * Konstruktor sa tri parametra
+			 * @param value
+			 * @param next
+			 * @param previous
+			 */
 			
 			public Node(int value, Node next, Node previous)
 			{
